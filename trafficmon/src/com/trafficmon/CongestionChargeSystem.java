@@ -9,6 +9,22 @@ public class CongestionChargeSystem {
 
     private final List<ZoneBoundaryCrossing> eventLog = new ArrayList<ZoneBoundaryCrossing>();
 
+    //NEW
+    private PenaltiesService penaltiesService;
+    private AccountsService accountsService;
+
+    public CongestionChargeSystem()
+    {
+        this.penaltiesService = OperationsTeam.getInstance();
+        this.accountsService = RegisteredCustomerAccountsService.getInstance();
+    }
+
+    public CongestionChargeSystem(PenaltiesService penaltiesService, AccountsService accountsService)
+    {
+        this.penaltiesService = penaltiesService;
+        this.accountsService = accountsService;
+    }
+
     public void vehicleEnteringZone(Vehicle vehicle) {
         eventLog.add(new EntryEvent(vehicle));
     }
@@ -36,17 +52,17 @@ public class CongestionChargeSystem {
             List<ZoneBoundaryCrossing> crossings = vehicleCrossings.getValue();
 
             if (!checkOrderingOf(crossings)) {
-                OperationsTeam.getInstance().triggerInvestigationInto(vehicle);
+                penaltiesService.triggerInvestigationInto(vehicle);
             } else {
 
                 BigDecimal charge = calculateChargeForTimeInZone(crossings);
 
                 try {
-                    RegisteredCustomerAccountsService.getInstance().accountFor(vehicle).deduct(charge);
+                    accountsService.accountFor(vehicle).deduct(charge);
                 } catch (InsufficientCreditException ice) {
-                    OperationsTeam.getInstance().issuePenaltyNotice(vehicle, charge);
+                    penaltiesService.issuePenaltyNotice(vehicle, charge);
                 } catch (AccountNotRegisteredException e) {
-                    OperationsTeam.getInstance().issuePenaltyNotice(vehicle, charge);
+                    penaltiesService.issuePenaltyNotice(vehicle, charge);
                 }
             }
         }
