@@ -8,6 +8,7 @@ public abstract class ZoneBoundaryCrossing {
     public ZoneBoundaryCrossing(Vehicle vehicle) {
         this.vehicle = vehicle;
         this.time = System.currentTimeMillis();
+        //
     }
 
     public Vehicle getVehicle() {
