@@ -1,5 +1,6 @@
 import com.trafficmon.*;
 import org.hamcrest.CoreMatchers;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -18,9 +19,16 @@ public class CongestionChargeSystemTest {
 
     PenaltiesService mockPenaltyService = context.mock(PenaltiesService.class);
     AccountsService mockAccountsService = context.mock(AccountsService.class);
-    CongestionChargeSystem system = new CongestionChargeSystem(mockPenaltyService, mockAccountsService);
 
+    CongestionChargeSystem system = new CongestionChargeSystem(mockPenaltyService, mockAccountsService);
     Vehicle vehicle = Vehicle.withRegistration("A123 XYZ");
+    OldCharger charger = new OldCharger();
+
+    @Before
+    public void setUp()
+    {
+        system.setCharger(charger);
+    }
 
     //Tests for the old behaviour
 
@@ -97,31 +105,30 @@ public class CongestionChargeSystemTest {
     }
 
     @Test
-    public void vehicleShouldEnterZone() {
-        system.vehicleEnteringZone(vehicle);
-        assertThat(system.getEventLog().size(), CoreMatchers.is(1));
+    public void leavingVehiclesAreNotRegistered() {
+        system.vehicleLeavingZone(vehicle);
+        assertThat(system.getCrossings().size(), is(0));
     }
 
     @Test
-    public void vehicleShouldNotLeaveZoneIfNotRegistered() {
+    public void registersVehiclesSeparately() {
+        Vehicle vehicle1 = Vehicle.withRegistration("1234 567");
+
+        system.vehicleEnteringZone(vehicle1);
+        system.vehicleEnteringZone(vehicle);
         system.vehicleLeavingZone(vehicle);
-        assertThat(system.getEventLog().size(), CoreMatchers.is(0));
+        system.vehicleLeavingZone(vehicle1);
+        assertThat(system.getCrossings().size(), CoreMatchers.is(2));
     }
 
     @Test
-    public void vehicleShouldLeaveZoneWhenRegistered() {
-        system.vehicleEnteringZone(vehicle);
-        system.vehicleLeavingZone(vehicle);
-        assertThat(system.getEventLog().size(), CoreMatchers.is(2));
-    }
-
-    @Test
-    public void eventLogSizeShouldIncrement() {
+    public void doesntRegisterTheSameVehicleTwice() {
         system.vehicleEnteringZone(vehicle);
         system.vehicleLeavingZone(vehicle);
         system.vehicleEnteringZone(vehicle);
-        assertThat(system.getEventLog().size(), CoreMatchers.is(3));
+        system.vehicleLeavingZone(vehicle);
+        assertThat(system.getCrossings().size(), CoreMatchers.is(1));
     }
 
-    //TODO: Review tests
+    //TODO: Review tests + add tests for the NEW behaviour
 }

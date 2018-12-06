@@ -5,123 +5,52 @@ import java.util.*;
 
 public class CongestionChargeSystem {
 
-    public static final BigDecimal CHARGE_RATE_POUNDS_PER_MINUTE = new BigDecimal(0.05);
+    private final Map<Vehicle, List<ZoneBoundaryCrossing>> vehicleCrossings = new HashMap<Vehicle, List<ZoneBoundaryCrossing>>();
 
-    private final List<ZoneBoundaryCrossing> eventLog = new ArrayList<ZoneBoundaryCrossing>();
-
-    //NEW
     private PenaltiesService penaltiesService;
     private AccountsService accountsService;
+    private Charger charger;
 
-    public CongestionChargeSystem()
-    {
+    public CongestionChargeSystem() {
         this.penaltiesService = OperationsTeam.getInstance();
         this.accountsService = RegisteredCustomerAccountsService.getInstance();
     }
 
-    public CongestionChargeSystem(PenaltiesService penaltiesService, AccountsService accountsService)
-    {
+    public CongestionChargeSystem(PenaltiesService penaltiesService, AccountsService accountsService) {
         this.penaltiesService = penaltiesService;
         this.accountsService = accountsService;
     }
 
+    public void setCharger(Charger charger)
+    {
+        charger.setAccountsService(accountsService);
+        charger.setPenaltiesService(penaltiesService);
+        this.charger = charger;
+    }
+
     public void vehicleEnteringZone(Vehicle vehicle) {
-        eventLog.add(new EntryEvent(vehicle));
+        if (!vehicleCrossings.containsKey(vehicle)) {
+            vehicleCrossings.put(vehicle, new ArrayList<ZoneBoundaryCrossing>());
+        }
+        vehicleCrossings.get(vehicle).add(new EntryEvent(vehicle));
     }
 
     public void vehicleLeavingZone(Vehicle vehicle) {
-        if (!previouslyRegistered(vehicle)) {
+
+        if (!vehicleCrossings.containsKey(vehicle)) {
             return;
         }
-        eventLog.add(new ExitEvent(vehicle));
+        vehicleCrossings.get(vehicle).add(new ExitEvent(vehicle));
     }
 
     public void calculateCharges() {
 
-        Map<Vehicle, List<ZoneBoundaryCrossing>> crossingsByVehicle = new HashMap<Vehicle, List<ZoneBoundaryCrossing>>();
-
-        for (ZoneBoundaryCrossing crossing : eventLog) {
-            if (!crossingsByVehicle.containsKey(crossing.getVehicle())) {
-                crossingsByVehicle.put(crossing.getVehicle(), new ArrayList<ZoneBoundaryCrossing>());
-            }
-            crossingsByVehicle.get(crossing.getVehicle()).add(crossing);
-        }
-
-        for (Map.Entry<Vehicle, List<ZoneBoundaryCrossing>> vehicleCrossings : crossingsByVehicle.entrySet()) {
-            Vehicle vehicle = vehicleCrossings.getKey();
-            List<ZoneBoundaryCrossing> crossings = vehicleCrossings.getValue();
-
-            if (!checkOrderingOf(crossings)) {
-                penaltiesService.triggerInvestigationInto(vehicle);
-            } else {
-
-                BigDecimal charge = calculateChargeForTimeInZone(crossings);
-
-                try {
-                    accountsService.accountFor(vehicle).deduct(charge);
-                } catch (InsufficientCreditException ice) {
-                    penaltiesService.issuePenaltyNotice(vehicle, charge);
-                } catch (AccountNotRegisteredException e) {
-                    penaltiesService.issuePenaltyNotice(vehicle, charge);
-                }
-            }
-        }
+        charger.charge(vehicleCrossings);
     }
 
-    private BigDecimal calculateChargeForTimeInZone(List<ZoneBoundaryCrossing> crossings) {
-
-        BigDecimal charge = new BigDecimal(0);
-
-        ZoneBoundaryCrossing lastEvent = crossings.get(0);
-
-        for (ZoneBoundaryCrossing crossing : crossings.subList(1, crossings.size())) {
-
-            if (crossing instanceof ExitEvent) {
-                charge = charge.add(
-                        new BigDecimal(minutesBetween(lastEvent.timestamp(), crossing.timestamp()))
-                                .multiply(CHARGE_RATE_POUNDS_PER_MINUTE));
-            }
-
-            lastEvent = crossing;
-        }
-
-        return charge;
-    }
-
-    private boolean previouslyRegistered(Vehicle vehicle) {
-        for (ZoneBoundaryCrossing crossing : eventLog) {
-            if (crossing.getVehicle().equals(vehicle)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean checkOrderingOf(List<ZoneBoundaryCrossing> crossings) {
-
-        ZoneBoundaryCrossing lastEvent = crossings.get(0);
-
-        for (ZoneBoundaryCrossing crossing : crossings.subList(1, crossings.size())) {
-            if (crossing.timestamp() < lastEvent.timestamp()) {
-                return false;
-            }
-            if (crossing instanceof EntryEvent && lastEvent instanceof EntryEvent) {
-                return false;
-            }
-            if (crossing instanceof ExitEvent && lastEvent instanceof ExitEvent) {
-                return false;
-            }
-            lastEvent = crossing;
-        }
-
-        return true;
-    }
-
-    private int minutesBetween(long startTimeMs, long endTimeMs) {
-        return (int) Math.ceil((endTimeMs - startTimeMs) / (1000.0 * 60.0));
-    }
-
-    public List<ZoneBoundaryCrossing> getEventLog() {
-        return eventLog;
+    //for test purposes
+    public Map<Vehicle, List<ZoneBoundaryCrossing>> getCrossings() {
+        return vehicleCrossings;
     }
 }
+
