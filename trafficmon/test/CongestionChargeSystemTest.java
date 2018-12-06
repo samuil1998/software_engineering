@@ -1,7 +1,9 @@
 import com.trafficmon.*;
+import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnitRuleMockery;
@@ -9,9 +11,7 @@ import org.junit.Rule;
 
 import java.math.BigDecimal;
 
-public class TestExample{
-
-    public BigDecimal CHARGE_RATE_POUNDS_PER_MINUTE = new BigDecimal(0.05);
+public class CongestionChargeSystemTest {
 
     @Rule
     public JUnitRuleMockery context = new JUnitRuleMockery();
@@ -21,6 +21,8 @@ public class TestExample{
     CongestionChargeSystem system = new CongestionChargeSystem(mockPenaltyService, mockAccountsService);
 
     Vehicle vehicle = Vehicle.withRegistration("A123 XYZ");
+
+    //Tests for the old behaviour
 
     @Test
     public void noPenaltyOrInvestigationForRegisteredVehiclesWithCredit() throws Exception
@@ -43,7 +45,7 @@ public class TestExample{
     }
 
     @Test
-    public void triggersInvestigationIfEnteringTwice() throws Exception
+    public void triggersInvestigationIfEnteringTwiceInARow() throws Exception
     {
         context.checking(new Expectations()
         {{
@@ -93,4 +95,33 @@ public class TestExample{
 
         system.calculateCharges();
     }
+
+    @Test
+    public void vehicleShouldEnterZone() {
+        system.vehicleEnteringZone(vehicle);
+        assertThat(system.getEventLog().size(), CoreMatchers.is(1));
+    }
+
+    @Test
+    public void vehicleShouldNotLeaveZoneIfNotRegistered() {
+        system.vehicleLeavingZone(vehicle);
+        assertThat(system.getEventLog().size(), CoreMatchers.is(0));
+    }
+
+    @Test
+    public void vehicleShouldLeaveZoneWhenRegistered() {
+        system.vehicleEnteringZone(vehicle);
+        system.vehicleLeavingZone(vehicle);
+        assertThat(system.getEventLog().size(), CoreMatchers.is(2));
+    }
+
+    @Test
+    public void eventLogSizeShouldIncrement() {
+        system.vehicleEnteringZone(vehicle);
+        system.vehicleLeavingZone(vehicle);
+        system.vehicleEnteringZone(vehicle);
+        assertThat(system.getEventLog().size(), CoreMatchers.is(3));
+    }
+
+    //TODO: Review tests
 }
