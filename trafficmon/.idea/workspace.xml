@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fe35a0e-4d37-43c1-a02e-f3f29e5fc8ba" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/Publisher.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Subscriber.java" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/trafficmon/TestExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/trafficmon/TestExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/VehicleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/VehicleTest.java" afterDir="false" />
+>>>>>>> elena
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,24 +34,42 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+<<<<<<< HEAD
           <entry key="class" value="15" />
           <entry key="java" value="29" />
+=======
+          <entry key="class" value="1" />
+          <entry key="java" value="7" />
+>>>>>>> elena
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+<<<<<<< HEAD
           <entry key="CLASS" value="15" />
           <entry key="JAVA" value="29" />
+=======
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="7" />
+>>>>>>> elena
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="java" value="5896" />
+=======
+          <entry key="java" value="792" />
+>>>>>>> elena
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="JAVA" value="5896" />
+=======
+          <entry key="JAVA" value="792" />
+>>>>>>> elena
         </counts>
       </usages-collector>
     </session>
@@ -51,8 +77,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/trafficmon/CongestionChargeSystem.java">
+        <entry file="file://$PROJECT_DIR$/test/TestExample.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="1785">
               <caret line="119" column="30" selection-start-line="119" selection-start-column="30" selection-end-line="119" selection-end-column="30" />
               <folding>
@@ -80,11 +107,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+=======
+            <state relative-caret-position="120">
+              <caret line="8" column="59" lean-forward="true" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> elena
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/com/trafficmon/ExitEvent.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
@@ -98,15 +133,30 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/com/trafficmon/Vehicle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+              <folding>
+                <element signature="e#245#246#0" expanded="true" />
+                <element signature="e#293#294#0" expanded="true" />
+              </folding>
+>>>>>>> elena
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/TestExample.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/VehicleTest.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="330">
               <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+=======
+            <state relative-caret-position="240">
+              <caret line="16" column="60" lean-forward="true" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+>>>>>>> elena
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,6 +164,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/lib/trafficmon-externals.jar!/com/trafficmon/AccountsService.class">
           <provider selected="true" editor-type-id="text-editor">
@@ -137,6 +188,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/ZoneBoundaryCrossingTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> elena
             </state>
           </provider>
         </entry>
@@ -167,14 +228,24 @@
         <option value="$PROJECT_DIR$/test/TestPublisher.java" />
         <option value="$PROJECT_DIR$/src/Publisher.java" />
         <option value="$PROJECT_DIR$/src/com/trafficmon/Example.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/test/MockAccountsService.java" />
+=======
+>>>>>>> elena
         <option value="$PROJECT_DIR$/src/com/trafficmon/CongestionChargeSystem.java" />
         <option value="$PROJECT_DIR$/test/TestExample.java" />
+        <option value="$PROJECT_DIR$/test/VehicleTest.java" />
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="28" />
+    <option name="y" value="31" />
+>>>>>>> elena
     <option name="width" value="1440" />
     <option name="height" value="823" />
   </component>
@@ -238,9 +309,15 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544051509473" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Problems" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544057218502" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+>>>>>>> elena
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -266,6 +343,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="JUnit.TestExample">
     <configuration name="TestExample" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trafficmon" />
@@ -291,10 +369,20 @@
       <option name="MAIN_CLASS_NAME" value="TestExample" />
       <option name="METHOD_NAME" value="issuesPenaltyNoticeForLackOfCredit" />
       <option name="TEST_OBJECT" value="method" />
+=======
+  <component name="RunManager" selected="JUnit.VehicleTest">
+    <configuration name="MoreTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trafficmon" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MoreTests" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+>>>>>>> elena
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="TestExample.issuesPenaltyNoticeForUnregisteredVehicles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trafficmon" />
       <option name="PACKAGE_NAME" value="" />
@@ -310,12 +398,52 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestExample" />
       <option name="METHOD_NAME" value="triggersInvestigationIfEnteringTwice" />
+=======
+    <configuration name="MoreTests.TestSomething" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trafficmon" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MoreTests" />
+      <option name="METHOD_NAME" value="TestSomething" />
+>>>>>>> elena
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MoreTests.eventLogSizeShouldIncrement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trafficmon" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MoreTests" />
+      <option name="METHOD_NAME" value="eventLogSizeShouldIncrement" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VehicleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trafficmon" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="VehicleTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZoneBoundaryCrossingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trafficmon" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ZoneBoundaryCrossingTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+<<<<<<< HEAD
       <item itemvalue="JUnit.TestExample.triggersInvestigationIfEnteringTwice" />
       <item itemvalue="JUnit.TestExample" />
       <item itemvalue="JUnit.TestExample.issuesPenaltyNoticeForUnregisteredVehicles" />
@@ -329,6 +457,21 @@
         <item itemvalue="JUnit.TestExample.triggersInvestigationIfEnteringTwice" />
         <item itemvalue="JUnit.TestExample.issuesPenaltyNoticeForLackOfCredit" />
         <item itemvalue="JUnit.TestExample.issuesPenaltyNoticeForUnregisteredVehicles" />
+=======
+      <item itemvalue="JUnit.MoreTests.TestSomething" />
+      <item itemvalue="JUnit.MoreTests" />
+      <item itemvalue="JUnit.ZoneBoundaryCrossingTest" />
+      <item itemvalue="JUnit.VehicleTest" />
+      <item itemvalue="JUnit.MoreTests.eventLogSizeShouldIncrement" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.VehicleTest" />
+        <item itemvalue="JUnit.MoreTests" />
+        <item itemvalue="JUnit.MoreTests.eventLogSizeShouldIncrement" />
+        <item itemvalue="JUnit.ZoneBoundaryCrossingTest" />
+        <item itemvalue="JUnit.MoreTests.TestSomething" />
+>>>>>>> elena
       </list>
     </recent_temporary>
   </component>
@@ -346,6 +489,7 @@
     <servers />
   </component>
   <component name="TestHistory">
+<<<<<<< HEAD
     <history-entry file="TestExample - 2018.12.03 at 04h 01m 18s.xml">
       <configuration name="TestExample" configurationId="JUnit" />
     </history-entry>
@@ -375,6 +519,22 @@
     </history-entry>
     <history-entry file="TestExample - 2018.12.05 at 19h 42m 17s.xml">
       <configuration name="TestExample" configurationId="JUnit" />
+=======
+    <history-entry file="TestExample_eventLogSizeShouldIncrement - 2018.12.05 at 23h 32m 29s.xml">
+      <configuration name="TestExample.eventLogSizeShouldIncrement" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestExample - 2018.12.05 at 23h 32m 43s.xml">
+      <configuration name="TestExample" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestExample_eventLogSizeShouldIncrement - 2018.12.05 at 23h 32m 54s.xml">
+      <configuration name="TestExample.eventLogSizeShouldIncrement" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestExample - 2018.12.05 at 23h 35m 45s.xml">
+      <configuration name="TestExample" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VehicleTest - 2018.12.05 at 23h 45m 41s.xml">
+      <configuration name="VehicleTest" configurationId="JUnit" />
+>>>>>>> elena
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -390,16 +550,28 @@
       <window_info id="Learn" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Find" order="1" weight="0.32968536" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28674698" />
+=======
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
+>>>>>>> elena
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32891566" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+>>>>>>> elena
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -460,6 +632,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Subscriber.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="30">
           <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
         </state>
@@ -484,11 +657,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+=======
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="18" />
+>>>>>>> elena
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/hamcrest-all-1.3.jar!/org/hamcrest/CoreMatchers.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="102" column="35" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/trafficmon/CongestionChargeSystem.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1785">
           <caret line="119" column="30" selection-start-line="119" selection-start-column="30" selection-end-line="119" selection-end-column="30" />
           <folding>
@@ -505,12 +690,28 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/trafficmon/EntryEvent.java">
+=======
+        <state relative-caret-position="30">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/trafficmon/ZoneBoundaryCrossing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/trafficmon/ExitEvent.java">
+>>>>>>> elena
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/test/MockAccountsService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -519,6 +720,12 @@
             <element signature="imports" expanded="true" />
             <element signature="e#221#230#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/com/trafficmon/EntryEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+>>>>>>> elena
         </state>
       </provider>
     </entry>
@@ -531,15 +738,24 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/trafficmon-externals.jar!/com/trafficmon/RegisteredCustomerAccountsService.class">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="960">
+=======
+        <state relative-caret-position="488">
+>>>>>>> elena
           <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/trafficmon-externals.jar!/com/trafficmon/Account.class">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="90">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+=======
+        <state relative-caret-position="525">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+>>>>>>> elena
         </state>
       </provider>
     </entry>
@@ -554,6 +770,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/test/TestPublisher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -568,13 +785,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+=======
+    <entry file="file://$PROJECT_DIR$/test/VehicleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="60" lean-forward="true" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> elena
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/TestExample.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="330">
           <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+=======
+        <state relative-caret-position="120">
+          <caret line="8" column="59" lean-forward="true" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ZoneBoundaryCrossingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+>>>>>>> elena
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
