@@ -1,11 +1,10 @@
 package com.trafficmon;
 
-import java.math.BigDecimal;
 import java.util.*;
 
 public class CongestionChargeSystem {
 
-    private final Map<Vehicle, List<ZoneBoundaryCrossing>> vehicleCrossings = new HashMap<Vehicle, List<ZoneBoundaryCrossing>>();
+    private final Map<Vehicle, List<Crossing>> vehicleCrossings = new HashMap<Vehicle, List<Crossing>>();
 
     private PenaltiesService penaltiesService;
     private AccountsService accountsService;
@@ -30,9 +29,9 @@ public class CongestionChargeSystem {
 
     public void vehicleEnteringZone(Vehicle vehicle) {
         if (!vehicleCrossings.containsKey(vehicle)) {
-            vehicleCrossings.put(vehicle, new ArrayList<ZoneBoundaryCrossing>());
+            vehicleCrossings.put(vehicle, new ArrayList<Crossing>());
         }
-        vehicleCrossings.get(vehicle).add(new EntryEvent(vehicle));
+        vehicleCrossings.get(vehicle).add(new Crossing(vehicle, "entry"));
     }
 
     public void vehicleLeavingZone(Vehicle vehicle) {
@@ -40,7 +39,7 @@ public class CongestionChargeSystem {
         if (!vehicleCrossings.containsKey(vehicle)) {
             return;
         }
-        vehicleCrossings.get(vehicle).add(new ExitEvent(vehicle));
+        vehicleCrossings.get(vehicle).add(new Crossing(vehicle, "exit"));
     }
 
     public void calculateCharges() {
@@ -49,7 +48,7 @@ public class CongestionChargeSystem {
     }
 
     //for test purposes
-    public Map<Vehicle, List<ZoneBoundaryCrossing>> getCrossings() {
+    public Map<Vehicle, List<Crossing>> getCrossings() {
         return vehicleCrossings;
     }
 }

@@ -12,10 +12,20 @@ public class OldCharger implements Charger{
     private AccountsService accountsService;
 
     @Override
-    public void charge(Map<Vehicle, List<ZoneBoundaryCrossing>> x) {
-        for (Map.Entry<Vehicle, List<ZoneBoundaryCrossing>> vehicleCrossings : x.entrySet()) {
+    public void setPenaltiesService(PenaltiesService penaltiesService) {
+        this.penaltiesService = penaltiesService;
+    }
+
+    @Override
+    public void setAccountsService(AccountsService accountsService) {
+        this.accountsService = accountsService;
+    }
+
+    @Override
+    public void charge(Map<Vehicle, List<Crossing>> x) {
+        for (Map.Entry<Vehicle, List<Crossing>> vehicleCrossings : x.entrySet()) {
             Vehicle vehicle = vehicleCrossings.getKey();
-            List<ZoneBoundaryCrossing> crossings = vehicleCrossings.getValue();
+            List<Crossing> crossings = vehicleCrossings.getValue();
 
             if (!checkOrderingOf(crossings)) {
                 penaltiesService.triggerInvestigationInto(vehicle);
@@ -34,18 +44,18 @@ public class OldCharger implements Charger{
         }
     }
 
-    private boolean checkOrderingOf(List<ZoneBoundaryCrossing> crossings) {
+    private boolean checkOrderingOf(List<Crossing> crossings) {
 
-        ZoneBoundaryCrossing lastEvent = crossings.get(0);
+        Crossing lastEvent = crossings.get(0);
 
-        for (ZoneBoundaryCrossing crossing : crossings.subList(1, crossings.size())) {
+        for (Crossing crossing : crossings.subList(1, crossings.size())) {
             if (crossing.timestamp() < lastEvent.timestamp()) {
                 return false;
             }
-            if (crossing instanceof EntryEvent && lastEvent instanceof EntryEvent) {
+            if (crossing.isEntry() && lastEvent.isEntry()) {
                 return false;
             }
-            if (crossing instanceof ExitEvent && lastEvent instanceof ExitEvent) {
+            if (crossing.isExit() && lastEvent.isExit()) {
                 return false;
             }
             lastEvent = crossing;
@@ -54,15 +64,15 @@ public class OldCharger implements Charger{
         return true;
     }
 
-    private BigDecimal calculateChargeForTimeInZone(List<ZoneBoundaryCrossing> crossings) {
+    private BigDecimal calculateChargeForTimeInZone(List<Crossing> crossings) {
 
         BigDecimal charge = new BigDecimal(0);
 
-        ZoneBoundaryCrossing lastEvent = crossings.get(0);
+        Crossing lastEvent = crossings.get(0);
 
-        for (ZoneBoundaryCrossing crossing : crossings.subList(1, crossings.size())) {
+        for (Crossing crossing : crossings.subList(1, crossings.size())) {
 
-            if (crossing instanceof ExitEvent) {
+            if (crossing.isExit()) {
                 charge = charge.add(
                         new BigDecimal(minutesBetween(lastEvent.timestamp(), crossing.timestamp()))
                                 .multiply(CHARGE_RATE_POUNDS_PER_MINUTE));
@@ -77,16 +87,4 @@ public class OldCharger implements Charger{
     private int minutesBetween(long startTimeMs, long endTimeMs) {
         return (int) Math.ceil((endTimeMs - startTimeMs) / (1000.0 * 60.0));
     }
-
-    @Override
-    public void setPenaltiesService(PenaltiesService penaltiesService) {
-        this.penaltiesService = penaltiesService;
-    }
-
-    @Override
-    public void setAccountsService(AccountsService accountsService) {
-        this.accountsService = accountsService;
-    }
-
-
 }

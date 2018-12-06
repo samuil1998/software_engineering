@@ -1,7 +1,7 @@
 package com.trafficmon;
 
-public class EntryEvent extends ZoneBoundaryCrossing {
+public class EntryEvent extends Crossing {
     public EntryEvent(Vehicle vehicleRegistration) {
-        super(vehicleRegistration);
+        super(vehicleRegistration, "entry");
     }
 }
