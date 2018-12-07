@@ -31,7 +31,11 @@ public class Crossing {
         return type.equals("exit");
     }
 
-    public long timestamp() {
+    public long getTimestamp() {
         return time;
+    }
+
+    public String getType(){
+        return type;
     }
 }

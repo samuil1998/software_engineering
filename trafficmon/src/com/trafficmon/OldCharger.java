@@ -22,8 +22,8 @@ public class OldCharger implements Charger{
     }
 
     @Override
-    public void charge(Map<Vehicle, List<Crossing>> x) {
-        for (Map.Entry<Vehicle, List<Crossing>> vehicleCrossings : x.entrySet()) {
+    public void charge(Map<Vehicle, List<Crossing>> mapping) {
+        for (Map.Entry<Vehicle, List<Crossing>> vehicleCrossings : mapping.entrySet()) {
             Vehicle vehicle = vehicleCrossings.getKey();
             List<Crossing> crossings = vehicleCrossings.getValue();
 
@@ -44,23 +44,15 @@ public class OldCharger implements Charger{
         }
     }
 
-    private boolean checkOrderingOf(List<Crossing> crossings) {
+    private boolean checkOrderingOf(List<Crossing> crossings)
+    {
+        for (int i = 0; i < crossings.size() - 1; i++) {
+            Crossing previousCrossing = crossings.get(i);
+            Crossing nextCrossing = crossings.get(i+1);
 
-        Crossing lastEvent = crossings.get(0);
-
-        for (Crossing crossing : crossings.subList(1, crossings.size())) {
-            if (crossing.timestamp() < lastEvent.timestamp()) {
-                return false;
-            }
-            if (crossing.isEntry() && lastEvent.isEntry()) {
-                return false;
-            }
-            if (crossing.isExit() && lastEvent.isExit()) {
-                return false;
-            }
-            lastEvent = crossing;
+            if (previousCrossing.getTimestamp() > nextCrossing.getTimestamp()) {return false;}
+            if (previousCrossing.getType().equals(nextCrossing.getType())) {return false;}
         }
-
         return true;
     }
 
@@ -74,7 +66,7 @@ public class OldCharger implements Charger{
 
             if (crossing.isExit()) {
                 charge = charge.add(
-                        new BigDecimal(minutesBetween(lastEvent.timestamp(), crossing.timestamp()))
+                        new BigDecimal(minutesBetween(lastEvent.getTimestamp(), crossing.getTimestamp()))
                                 .multiply(CHARGE_RATE_POUNDS_PER_MINUTE));
             }
 

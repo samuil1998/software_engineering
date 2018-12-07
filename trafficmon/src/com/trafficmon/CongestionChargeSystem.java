@@ -20,8 +20,7 @@ public class CongestionChargeSystem {
         this.accountsService = accountsService;
     }
 
-    public void setCharger(Charger charger)
-    {
+    public void setCharger(Charger charger) {
         charger.setAccountsService(accountsService);
         charger.setPenaltiesService(penaltiesService);
         this.charger = charger;
@@ -35,7 +34,6 @@ public class CongestionChargeSystem {
     }
 
     public void vehicleLeavingZone(Vehicle vehicle) {
-
         if (!vehicleCrossings.containsKey(vehicle)) {
             return;
         }
@@ -43,7 +41,6 @@ public class CongestionChargeSystem {
     }
 
     public void calculateCharges() {
-
         charger.charge(vehicleCrossings);
     }
 
