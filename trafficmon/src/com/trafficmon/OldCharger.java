@@ -16,7 +16,7 @@ public class OldCharger implements Charger {
 
         for (Crossing crossing : crossings.subList(1, crossings.size())) {
 
-            if (crossing.isExit()) {
+            if (crossing.getType().equals("exit")) {
                 charge = charge.add(
                         new BigDecimal(minutesBetween(lastEvent.getTimestamp(), crossing.getTimestamp()))
                                 .multiply(CHARGE_RATE_POUNDS_PER_MINUTE));

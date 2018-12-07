@@ -8,5 +8,5 @@ public interface Log {
     boolean isOrdered(Vehicle vehicle);
     List<Vehicle> getVehicles();
     List<Crossing> getCrossingsFor(Vehicle vehicle);
-    public int size();
+    int size();
 }

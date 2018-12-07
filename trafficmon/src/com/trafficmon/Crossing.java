@@ -24,16 +24,6 @@ public class Crossing {
         return vehicle;
     }
 
-    public boolean isEntry()
-    {
-        return type.equals("entry");
-    }
-
-    public boolean isExit()
-    {
-        return type.equals("exit");
-    }
-
     public long getTimestamp() {
         return time;
     }
