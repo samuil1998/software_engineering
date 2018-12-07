@@ -1,5 +1,7 @@
 package com.trafficmon;
 
+import org.joda.time.DateTimeUtils;
+
 public class Crossing {
 
     private final String type;
@@ -14,7 +16,8 @@ public class Crossing {
             throw new IllegalArgumentException("Crossing can only be of type entry or exit");
         }
         this.vehicle = vehicle;
-        this.time = System.currentTimeMillis();
+        this.time = DateTimeUtils.currentTimeMillis();
+        //this.time = System.currentTimeMillis();
     }
 
     public Vehicle getVehicle() {

@@ -21,31 +21,8 @@ public class OldCharger implements Charger {
         this.accountsService = accountsService;
     }
 
-    @Override
-    public void charge(Log mapping) {
-        for (Vehicle vehicle : mapping.getVehicles())
-        {
-            List<Crossing> crossings = mapping.getCrossingsFor(vehicle);
-
-            if (!mapping.isOrdered(vehicle)) {
-                penaltiesService.triggerInvestigationInto(vehicle);
-            } else {
-
-                BigDecimal charge = calculateChargeForTimeInZone(crossings);
-
-                try {
-                    accountsService.accountFor(vehicle).deduct(charge);
-                } catch (InsufficientCreditException ice) {
-                    penaltiesService.issuePenaltyNotice(vehicle, charge);
-                } catch (AccountNotRegisteredException e) {
-                    penaltiesService.issuePenaltyNotice(vehicle, charge);
-                }
-            }
-        }
-    }
-
-    private BigDecimal calculateChargeForTimeInZone(List<Crossing> crossings) {
-
+    public BigDecimal calculateCharge(List<Crossing> crossings)
+    {
         BigDecimal charge = new BigDecimal(0);
 
         Crossing lastEvent = crossings.get(0);

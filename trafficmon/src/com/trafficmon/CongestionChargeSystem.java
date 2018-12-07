@@ -1,5 +1,6 @@
 package com.trafficmon;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public class CongestionChargeSystem {
@@ -35,7 +36,26 @@ public class CongestionChargeSystem {
     }
 
     public void calculateCharges() {
-        charger.charge(log);
+
+        for (Vehicle vehicle : log.getVehicles())
+        {
+            List<Crossing> crossings = log.getCrossingsFor(vehicle);
+
+            if (!log.isOrdered(vehicle)) {
+                penaltiesService.triggerInvestigationInto(vehicle);
+            }
+            else {
+                BigDecimal charge = charger.calculateCharge(crossings);
+
+                try {
+                    accountsService.accountFor(vehicle).deduct(charge);
+                } catch (InsufficientCreditException ice) {
+                    penaltiesService.issuePenaltyNotice(vehicle, charge);
+                } catch (AccountNotRegisteredException e) {
+                    penaltiesService.issuePenaltyNotice(vehicle, charge);
+                }
+            }
+        }
     }
 
     public Log getLog() {

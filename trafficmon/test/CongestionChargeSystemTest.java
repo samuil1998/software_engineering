@@ -10,6 +10,8 @@ import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnitRuleMockery;
 import org.junit.Rule;
 
+import org.joda.time.DateTimeUtils;
+
 import java.math.BigDecimal;
 
 public class CongestionChargeSystemTest {
@@ -46,7 +48,8 @@ public class CongestionChargeSystemTest {
         }});
 
         system.vehicleEnteringZone(vehicle);
-        Thread.sleep(5);
+        DateTimeUtils.setCurrentMillisOffset(200000);
+        //Thread.sleep(5);
         system.vehicleLeavingZone(vehicle);
 
         system.calculateCharges();

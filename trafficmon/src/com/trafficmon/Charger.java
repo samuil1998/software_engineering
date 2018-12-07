@@ -1,13 +1,14 @@
 package com.trafficmon;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public interface Charger {
 
-    public void charge(Log vehicleCrossings);
+    BigDecimal calculateCharge(List<Crossing> crossings);
 
-    public void setPenaltiesService(PenaltiesService penaltiesService);
+    void setPenaltiesService(PenaltiesService penaltiesService);
 
-    public void setAccountsService(AccountsService accountsService);
+    void setAccountsService(AccountsService accountsService);
 
 }
