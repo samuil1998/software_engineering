@@ -7,8 +7,4 @@ public interface Charger {
 
     BigDecimal calculateCharge(List<Crossing> crossings);
 
-    void setPenaltiesService(PenaltiesService penaltiesService);
-
-    void setAccountsService(AccountsService accountsService);
-
 }

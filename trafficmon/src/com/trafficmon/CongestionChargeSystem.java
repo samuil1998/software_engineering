@@ -22,8 +22,6 @@ public class CongestionChargeSystem {
     }
 
     public void setCharger(Charger charger) {
-        charger.setAccountsService(accountsService);
-        charger.setPenaltiesService(penaltiesService);
         this.charger = charger;
     }
 

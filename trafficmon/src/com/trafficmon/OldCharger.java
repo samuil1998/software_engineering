@@ -8,19 +8,6 @@ public class OldCharger implements Charger {
 
     public static final BigDecimal CHARGE_RATE_POUNDS_PER_MINUTE = new BigDecimal(0.05);
 
-    private PenaltiesService penaltiesService;
-    private AccountsService accountsService;
-
-    @Override
-    public void setPenaltiesService(PenaltiesService penaltiesService) {
-        this.penaltiesService = penaltiesService;
-    }
-
-    @Override
-    public void setAccountsService(AccountsService accountsService) {
-        this.accountsService = accountsService;
-    }
-
     public BigDecimal calculateCharge(List<Crossing> crossings)
     {
         BigDecimal charge = new BigDecimal(0);
