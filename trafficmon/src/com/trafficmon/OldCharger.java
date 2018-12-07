@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.math.BigDecimal;
 
-public class OldCharger implements Charger{
+public class OldCharger implements Charger {
 
     public static final BigDecimal CHARGE_RATE_POUNDS_PER_MINUTE = new BigDecimal(0.05);
 
@@ -21,11 +21,38 @@ public class OldCharger implements Charger{
         this.accountsService = accountsService;
     }
 
+    /*
+
     @Override
     public void charge(Map<Vehicle, List<Crossing>> mapping) {
         for (Map.Entry<Vehicle, List<Crossing>> vehicleCrossings : mapping.entrySet()) {
             Vehicle vehicle = vehicleCrossings.getKey();
             List<Crossing> crossings = vehicleCrossings.getValue();
+
+            if (!checkOrderingOf(crossings)) {
+                penaltiesService.triggerInvestigationInto(vehicle);
+            } else {
+
+                BigDecimal charge = calculateChargeForTimeInZone(crossings);
+
+                try {
+                    accountsService.accountFor(vehicle).deduct(charge);
+                } catch (InsufficientCreditException ice) {
+                    penaltiesService.issuePenaltyNotice(vehicle, charge);
+                } catch (AccountNotRegisteredException e) {
+                    penaltiesService.issuePenaltyNotice(vehicle, charge);
+                }
+            }
+        }
+    }
+    */
+
+
+    @Override
+    public void charge(Log mapping) {
+        for (Vehicle vehicle : mapping.getVehicles())
+        {
+            List<Crossing> crossings = mapping.getCrossingsFor(vehicle);
 
             if (!checkOrderingOf(crossings)) {
                 penaltiesService.triggerInvestigationInto(vehicle);

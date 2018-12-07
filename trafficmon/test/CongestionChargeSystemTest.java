@@ -107,7 +107,7 @@ public class CongestionChargeSystemTest {
     @Test
     public void leavingVehiclesAreNotRegistered() {
         system.vehicleLeavingZone(vehicle);
-        assertThat(system.getCrossings().size(), is(0));
+        assertThat(system.getLog().size(), is(0));
     }
 
     @Test
@@ -118,7 +118,7 @@ public class CongestionChargeSystemTest {
         system.vehicleEnteringZone(vehicle);
         system.vehicleLeavingZone(vehicle);
         system.vehicleLeavingZone(vehicle1);
-        assertThat(system.getCrossings().size(), CoreMatchers.is(2));
+        assertThat(system.getLog().size(), CoreMatchers.is(2));
     }
 
     @Test
@@ -127,7 +127,7 @@ public class CongestionChargeSystemTest {
         system.vehicleLeavingZone(vehicle);
         system.vehicleEnteringZone(vehicle);
         system.vehicleLeavingZone(vehicle);
-        assertThat(system.getCrossings().size(), CoreMatchers.is(1));
+        assertThat(system.getLog().size(), CoreMatchers.is(1));
     }
 
     //TODO: Review tests + add tests for the NEW behaviour

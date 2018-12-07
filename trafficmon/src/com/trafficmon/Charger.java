@@ -4,7 +4,7 @@ import java.util.*;
 
 public interface Charger {
 
-    public void charge(Map<Vehicle, List<Crossing>> vehicleCrossings);
+    public void charge(Log vehicleCrossings);
 
     public void setPenaltiesService(PenaltiesService penaltiesService);
 
