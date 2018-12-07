@@ -4,8 +4,7 @@ import java.util.*;
 
 public class CongestionChargeSystem {
 
-    Log vehicleCrossings = new TrafficLog();
-    //private final Map<Vehicle, List<Crossing>> vehicleCrossings = new HashMap<Vehicle, List<Crossing>>();
+    Log log = new TrafficLog();
 
     private PenaltiesService penaltiesService;
     private AccountsService accountsService;
@@ -28,25 +27,19 @@ public class CongestionChargeSystem {
     }
 
     public void vehicleEnteringZone(Vehicle vehicle) {
-        vehicleCrossings.addEntry(vehicle);
-
-        /*if (!vehicleCrossings.containsKey(vehicle)) {
-            vehicleCrossings.put(vehicle, new ArrayList<Crossing>());
-        }
-        vehicleCrossings.get(vehicle).add(new Crossing(vehicle, "entry"));*/
+        log.addEntry(vehicle);
     }
 
     public void vehicleLeavingZone(Vehicle vehicle) {
-        vehicleCrossings.addExit(vehicle);
+        log.addExit(vehicle);
     }
 
     public void calculateCharges() {
-        charger.charge(vehicleCrossings);
+        charger.charge(log);
     }
 
-    //for test purposes
     public Log getLog() {
-        return vehicleCrossings;
+        return log;
     }
 }
 

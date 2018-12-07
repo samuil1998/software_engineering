@@ -21,40 +21,13 @@ public class OldCharger implements Charger {
         this.accountsService = accountsService;
     }
 
-    /*
-
-    @Override
-    public void charge(Map<Vehicle, List<Crossing>> mapping) {
-        for (Map.Entry<Vehicle, List<Crossing>> vehicleCrossings : mapping.entrySet()) {
-            Vehicle vehicle = vehicleCrossings.getKey();
-            List<Crossing> crossings = vehicleCrossings.getValue();
-
-            if (!checkOrderingOf(crossings)) {
-                penaltiesService.triggerInvestigationInto(vehicle);
-            } else {
-
-                BigDecimal charge = calculateChargeForTimeInZone(crossings);
-
-                try {
-                    accountsService.accountFor(vehicle).deduct(charge);
-                } catch (InsufficientCreditException ice) {
-                    penaltiesService.issuePenaltyNotice(vehicle, charge);
-                } catch (AccountNotRegisteredException e) {
-                    penaltiesService.issuePenaltyNotice(vehicle, charge);
-                }
-            }
-        }
-    }
-    */
-
-
     @Override
     public void charge(Log mapping) {
         for (Vehicle vehicle : mapping.getVehicles())
         {
             List<Crossing> crossings = mapping.getCrossingsFor(vehicle);
 
-            if (!checkOrderingOf(crossings)) {
+            if (!mapping.isOrdered(vehicle)) {
                 penaltiesService.triggerInvestigationInto(vehicle);
             } else {
 
@@ -69,18 +42,6 @@ public class OldCharger implements Charger {
                 }
             }
         }
-    }
-
-    private boolean checkOrderingOf(List<Crossing> crossings)
-    {
-        for (int i = 0; i < crossings.size() - 1; i++) {
-            Crossing previousCrossing = crossings.get(i);
-            Crossing nextCrossing = crossings.get(i+1);
-
-            if (previousCrossing.getTimestamp() > nextCrossing.getTimestamp()) {return false;}
-            if (previousCrossing.getType().equals(nextCrossing.getType())) {return false;}
-        }
-        return true;
     }
 
     private BigDecimal calculateChargeForTimeInZone(List<Crossing> crossings) {
