@@ -1,10 +1,12 @@
 package com.trafficmon;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public class TrafficLog implements Log {
 
     private final Map<Vehicle, List<Crossing>> vehicleCrossings = new HashMap<Vehicle, List<Crossing>>();
+    private NewCharger charger = new NewCharger();
 
     @Override
     public void addEntry(Vehicle vehicle) {
@@ -54,6 +56,11 @@ public class TrafficLog implements Log {
         return vehicleCrossings.size();
     }
 
+    @Override
+    public BigDecimal calculateCharges(Vehicle vehicle) {
+        return charger.calculateCharge(getCrossingsFor(vehicle));
+    }
+
     public static void main(String args[])
     {
         //TODO: Delete method before submission - main method just for manual testing
@@ -68,6 +75,6 @@ public class TrafficLog implements Log {
         System.out.println(log.getVehicles());
         System.out.println(log.getCrossingsFor(Vehicle.withRegistration("1234 567")));
         System.out.println(log.isOrdered(Vehicle.withRegistration("1234 567")));
-
+        System.out.println(log.calculateCharges(Vehicle.withRegistration("1234 567")));
     }
 }
