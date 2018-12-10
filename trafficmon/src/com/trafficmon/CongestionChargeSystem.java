@@ -14,6 +14,7 @@ public class CongestionChargeSystem {
     public CongestionChargeSystem() {
         this.penaltiesService = OperationsTeam.getInstance();
         this.accountsService = RegisteredCustomerAccountsService.getInstance();
+        this.charger = new OldCharger();
     }
 
     public CongestionChargeSystem(PenaltiesService penaltiesService, AccountsService accountsService) {
