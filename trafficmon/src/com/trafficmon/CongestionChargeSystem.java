@@ -7,23 +7,16 @@ public class CongestionChargeSystem {
 
     Log log = new TrafficLog();
 
-    private PenaltiesService penaltiesService;
-    private AccountsService accountsService;
-    private Calculator calculator;
+    private PenaltiesService penaltiesService = OperationsTeam.getInstance();
+    private AccountsService accountsService = RegisteredCustomerAccountsService.getInstance();
+    private Calculator calculator = new ChargeCalculator();
 
-    public CongestionChargeSystem() {
-        this.penaltiesService = OperationsTeam.getInstance();
-        this.accountsService = RegisteredCustomerAccountsService.getInstance();
-        this.calculator = new ChargeCalculator();
-    }
+    public CongestionChargeSystem() {}
 
     public CongestionChargeSystem(PenaltiesService penaltiesService, AccountsService accountsService) {
         this.penaltiesService = penaltiesService;
         this.accountsService = accountsService;
-    }
-
-    public void setCalculator(Calculator calculator) {
-        this.calculator = calculator;
+        this.calculator = new ChargeCalculator();
     }
 
     public void vehicleEnteringZone(Vehicle vehicle) {
@@ -55,10 +48,6 @@ public class CongestionChargeSystem {
                 }
             }
         }
-    }
-
-    public Log getLog() {
-        return log;
     }
 }
 

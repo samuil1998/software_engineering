@@ -22,17 +22,10 @@ public class CongestionChargeSystemTest {
     PenaltiesService mockPenaltyService = context.mock(PenaltiesService.class);
     AccountsService mockAccountsService = context.mock(AccountsService.class);
 
-    CongestionChargeSystem system = new CongestionChargeSystem(mockPenaltyService, mockAccountsService);
+    CongestionChargeSystem system = new CongestionChargeSystem(mockPenaltyService,mockAccountsService);
     Vehicle vehicle = Vehicle.withRegistration("A123 XYZ");
     ChargeCalculator charger = new ChargeCalculator();
 
-    @Before
-    public void setUp()
-    {
-        system.setCalculator(charger);
-    }
-
-    //Tests for the old behaviour
 
     @Test
     public void noPenaltyOrInvestigationForRegisteredVehiclesWithCredit() throws Exception
@@ -105,31 +98,5 @@ public class CongestionChargeSystemTest {
         system.vehicleLeavingZone(vehicle);
 
         system.calculateCharges();
-    }
-
-    @Test
-    public void leavingVehiclesAreNotRegistered() {
-        system.vehicleLeavingZone(vehicle);
-        assertThat(system.getLog().size(), is(0));
-    }
-
-    @Test
-    public void registersVehiclesSeparately() {
-        Vehicle vehicle1 = Vehicle.withRegistration("1234 567");
-
-        system.vehicleEnteringZone(vehicle1);
-        system.vehicleEnteringZone(vehicle);
-        system.vehicleLeavingZone(vehicle);
-        system.vehicleLeavingZone(vehicle1);
-        assertThat(system.getLog().size(), CoreMatchers.is(2));
-    }
-
-    @Test
-    public void doesntRegisterTheSameVehicleTwice() {
-        system.vehicleEnteringZone(vehicle);
-        system.vehicleLeavingZone(vehicle);
-        system.vehicleEnteringZone(vehicle);
-        system.vehicleLeavingZone(vehicle);
-        assertThat(system.getLog().size(), CoreMatchers.is(1));
     }
 }

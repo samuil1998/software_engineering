@@ -21,6 +21,14 @@ public class VehicleTest {
     }
 
     @Test
+    public void equalsReturnsTrueForTwoNullRegistrations() {
+        Vehicle testV1 = Vehicle.withRegistration(null);
+        Vehicle testV2 = Vehicle.withRegistration(null);
+        assertTrue(testV1.equals(testV2));
+
+    }
+
+    @Test
     public void hashCodeReturnsZeroForNullRegistration() {
         Vehicle testVehicle = Vehicle.withRegistration(null);
         assertThat(testVehicle.hashCode(), is(0));

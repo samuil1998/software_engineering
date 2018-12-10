@@ -34,7 +34,11 @@ public class ChargeCalculatorTest {
     {
         setTimeTo(6,0,0);
         entry();
-        setTimeTo(10,30,0);
+        setTimeTo(8,0,0);
+        exit();
+        setTimeTo(15,0,0);
+        entry();
+        setTimeTo(18,0,0);
         exit();
 
         assertThat(newCharger.calculateCharge(crossings), is(new BigDecimal(12)));

@@ -12,4 +12,9 @@ public class CrossingTest {
         Crossing testCrossing = new Crossing(vehicle, "entry");
         assertEquals(vehicle, testCrossing.getVehicle());
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void throwsExceptionForIllegalTypeArgument() {
+        Crossing crossing = new Crossing(Vehicle.withRegistration("1234 567"), "Illegal String");
+    }
 }
