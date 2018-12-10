@@ -1,6 +1,4 @@
 import com.trafficmon.*;
-import org.hamcrest.CoreMatchers;
-
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import org.joda.time.*;
