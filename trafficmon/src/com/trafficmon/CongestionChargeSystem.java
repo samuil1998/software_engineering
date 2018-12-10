@@ -9,12 +9,12 @@ public class CongestionChargeSystem {
 
     private PenaltiesService penaltiesService;
     private AccountsService accountsService;
-    private Charger charger;
+    private Calculator calculator;
 
     public CongestionChargeSystem() {
         this.penaltiesService = OperationsTeam.getInstance();
         this.accountsService = RegisteredCustomerAccountsService.getInstance();
-        this.charger = new OldCharger();
+        this.calculator = new ChargeCalculator();
     }
 
     public CongestionChargeSystem(PenaltiesService penaltiesService, AccountsService accountsService) {
@@ -22,8 +22,8 @@ public class CongestionChargeSystem {
         this.accountsService = accountsService;
     }
 
-    public void setCharger(Charger charger) {
-        this.charger = charger;
+    public void setCalculator(Calculator calculator) {
+        this.calculator = calculator;
     }
 
     public void vehicleEnteringZone(Vehicle vehicle) {
@@ -44,7 +44,7 @@ public class CongestionChargeSystem {
                 penaltiesService.triggerInvestigationInto(vehicle);
             }
             else {
-                BigDecimal charge = charger.calculateCharge(crossings);
+                BigDecimal charge = calculator.calculateCharge(crossings);
 
                 try {
                     accountsService.accountFor(vehicle).deduct(charge);

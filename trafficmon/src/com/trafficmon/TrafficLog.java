@@ -53,21 +53,4 @@ public class TrafficLog implements Log {
     {
         return vehicleCrossings.size();
     }
-
-    public static void main(String args[])
-    {
-        //TODO: Delete method before submission - main method just for manual testing
-
-        Log log = new TrafficLog();
-        log.addEntry(Vehicle.withRegistration("1234 568"));
-        log.addEntry(Vehicle.withRegistration("1234 568"));
-        log.addEntry(Vehicle.withRegistration("1234 567"));
-
-        log.addExit(Vehicle.withRegistration("1234 567"));
-
-        System.out.println(log.getVehicles());
-        System.out.println(log.getCrossingsFor(Vehicle.withRegistration("1234 567")));
-        System.out.println(log.isOrdered(Vehicle.withRegistration("1234 567")));
-
-    }
 }

@@ -24,12 +24,12 @@ public class CongestionChargeSystemTest {
 
     CongestionChargeSystem system = new CongestionChargeSystem(mockPenaltyService, mockAccountsService);
     Vehicle vehicle = Vehicle.withRegistration("A123 XYZ");
-    OldCharger charger = new OldCharger();
+    ChargeCalculator charger = new ChargeCalculator();
 
     @Before
     public void setUp()
     {
-        system.setCharger(charger);
+        system.setCalculator(charger);
     }
 
     //Tests for the old behaviour
@@ -37,7 +37,7 @@ public class CongestionChargeSystemTest {
     @Test
     public void noPenaltyOrInvestigationForRegisteredVehiclesWithCredit() throws Exception
     {
-        Account ACCOUNT = new Account("John Doe", vehicle, new BigDecimal(5));
+        Account ACCOUNT = new Account("John Doe", vehicle, new BigDecimal(50));
 
         context.checking(new Expectations()
         {{
@@ -64,7 +64,7 @@ public class CongestionChargeSystemTest {
         }});
 
         system.vehicleEnteringZone(vehicle);
-        Thread.sleep(5);
+        DateTimeUtils.setCurrentMillisOffset(5);
         system.vehicleEnteringZone(vehicle);
 
         system.calculateCharges();
@@ -132,6 +132,4 @@ public class CongestionChargeSystemTest {
         system.vehicleLeavingZone(vehicle);
         assertThat(system.getLog().size(), CoreMatchers.is(1));
     }
-
-    //TODO: Review tests + add tests for the NEW behaviour
 }

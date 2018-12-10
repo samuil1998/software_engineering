@@ -17,7 +17,6 @@ public class Crossing {
         }
         this.vehicle = vehicle;
         this.time = DateTimeUtils.currentTimeMillis();
-        //this.time = System.currentTimeMillis();
     }
 
     public Vehicle getVehicle() {

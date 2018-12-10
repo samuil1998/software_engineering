@@ -7,11 +7,27 @@ import java.util.*;
 import java.math.BigDecimal;
 
 
-public class NewChargerTest {
+public class ChargeCalculatorTest {
 
-    NewCharger newCharger = new NewCharger();
+    ChargeCalculator newCharger = new ChargeCalculator();
     Vehicle vehicle = Vehicle.withRegistration("1234 567");
     List<Crossing> crossings = new ArrayList<Crossing>();
+
+    private void entry()
+    {
+        crossings.add(new Crossing(vehicle, "entry"));
+    }
+
+    private void exit()
+    {
+        crossings.add(new Crossing(vehicle, "exit"));
+    }
+
+    private void setTimeTo(int hours, int minutes, int seconds)
+    {
+        DateTime dt = new DateTime(2018, 12, 10, hours, minutes, seconds, 0);
+        DateTimeUtils.setCurrentMillisFixed(dt.getMillis());
+    }
 
     @Test
     public void chargesTwelvePoundsForStayingOverFourHours()
@@ -68,22 +84,6 @@ public class NewChargerTest {
         exit();
 
         assertThat(newCharger.calculateCharge(crossings), is(new BigDecimal(6)));
-    }
-
-    private void entry()
-    {
-        crossings.add(new Crossing(vehicle, "entry"));
-    }
-
-    private void exit()
-    {
-        crossings.add(new Crossing(vehicle, "exit"));
-    }
-
-    private void setTimeTo(int hours, int minutes, int seconds)
-    {
-        DateTime dt = new DateTime(2018, 12, 10, hours, minutes, seconds, 0);
-        DateTimeUtils.setCurrentMillisFixed(dt.getMillis());
     }
 
 }

@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.*;
 import org.joda.time.*;
 
-public class NewCharger implements Charger{
+public class ChargeCalculator implements Calculator {
 
     private final long FOURHOURS = 14400000;
     private List<Crossing> crossings;
