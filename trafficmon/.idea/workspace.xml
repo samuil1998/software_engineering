@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fe35a0e-4d37-43c1-a02e-f3f29e5fc8ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trafficmon/com/trafficmon/CongestionChargeSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/trafficmon/com/trafficmon/CongestionChargeSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trafficmon/com/trafficmon/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/trafficmon/com/trafficmon/Log.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trafficmon/com/trafficmon/TrafficLog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/trafficmon/TrafficLogTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/trafficmon/ChargeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trafficmon/ChargeCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/trafficmon/CongestionChargeSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trafficmon/CongestionChargeSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/trafficmon/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trafficmon/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/trafficmon/TrafficLog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/trafficmon/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trafficmon/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/ChargeCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ChargeCalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CongestionChargeSystemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/CongestionChargeSystemTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TrafficLogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/LogTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/LogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/LogTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/trafficmon$All_in_trafficmon.ic" NAME="All in trafficmon Coverage Results" MODIFIED="1544490896226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/trafficmon$All_in_trafficmon.ic" NAME="All in trafficmon Coverage Results" MODIFIED="1544491002235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/trafficmon$CongestionChargeSystemTest.ic" NAME="CongestionChargeSystemTest Coverage Results" MODIFIED="1544123454259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/trafficmon$NewChargerTest.ic" NAME="NewChargerTest Coverage Results" MODIFIED="1544409206005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/trafficmon$CongestionChargeSystemTest_registersTheSameVehicleOnlyOnce.ic" NAME="CongestionChargeSystemTest.registersTheSameVehicleOnlyOnce Coverage Results" MODIFIED="1544123145122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -50,24 +38,24 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="15" />
-          <entry key="java" value="98" />
+          <entry key="java" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="15" />
-          <entry key="JAVA" value="98" />
+          <entry key="JAVA" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="179" />
-          <entry key="java" value="20338" />
+          <entry key="java" value="20370" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="20338" />
+          <entry key="JAVA" value="20370" />
           <entry key="PLAIN_TEXT" value="179" />
         </counts>
       </usages-collector>
@@ -81,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/trafficmon/Vehicle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="30">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -92,6 +80,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-250">
               <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/CrossingTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,11 +112,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/CongestionChargeSystemTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/VehicleTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="24" selection-start-column="24" selection-end-column="24" />
+              <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/LogTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/CongestionChargeSystemTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="53">
+              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -178,6 +205,7 @@
         <option value="$PROJECT_DIR$/src/com/trafficmon/Vehicle.java" />
         <option value="$PROJECT_DIR$/test/ChargeCalculatorTest.java" />
         <option value="$PROJECT_DIR$/test/CongestionChargeSystemTest.java" />
+        <option value="$PROJECT_DIR$/test/LogTest.java" />
       </list>
     </option>
   </component>
@@ -251,7 +279,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544490894869" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544491035332" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
@@ -355,24 +383,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_trafficmon - 2018.12.11 at 00h 58m 14s.xml">
-      <configuration name="All in trafficmon" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_trafficmon - 2018.12.11 at 00h 58m 17s.xml">
-      <configuration name="All in trafficmon" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_trafficmon - 2018.12.11 at 00h 59m 02s.xml">
-      <configuration name="All in trafficmon" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_trafficmon - 2018.12.11 at 00h 59m 04s.xml">
-      <configuration name="All in trafficmon" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ChargeCalculatorTest - 2018.12.11 at 01h 08m 31s.xml">
-      <configuration name="ChargeCalculatorTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_trafficmon - 2018.12.11 at 01h 08m 33s.xml">
-      <configuration name="All in trafficmon" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CongestionChargeSystemTest_noPenaltyOrInvestigationForRegisteredVehiclesWithCredit - 2018.12.11 at 01h 10m 01s.xml">
       <configuration name="CongestionChargeSystemTest.noPenaltyOrInvestigationForRegisteredVehiclesWithCredit" configurationId="JUnit" />
     </history-entry>
@@ -383,6 +393,24 @@
       <configuration name="All in trafficmon" configurationId="JUnit" />
     </history-entry>
     <history-entry file="All_in_trafficmon - 2018.12.11 at 01h 11m 48s.xml">
+      <configuration name="All in trafficmon" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_trafficmon - 2018.12.11 at 01h 13m 00s.xml">
+      <configuration name="All in trafficmon" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_trafficmon - 2018.12.11 at 01h 13m 01s.xml">
+      <configuration name="All in trafficmon" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_trafficmon - 2018.12.11 at 01h 13m 08s.xml">
+      <configuration name="All in trafficmon" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_trafficmon - 2018.12.11 at 01h 14m 55s.xml">
+      <configuration name="All in trafficmon" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_trafficmon - 2018.12.11 at 01h 14m 58s.xml">
+      <configuration name="All in trafficmon" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_trafficmon - 2018.12.11 at 01h 16m 44s.xml">
       <configuration name="All in trafficmon" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -499,27 +527,10 @@
     <entry file="file://$PROJECT_DIR$/src/com/trafficmon/EntryEvent.java" />
     <entry file="file://$PROJECT_DIR$/src/com/trafficmon/OldCalculator.java" />
     <entry file="file://$PROJECT_DIR$/src/com/trafficmon/Example.java" />
-    <entry file="file://$PROJECT_DIR$/test/LogTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/trafficmon/Log.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/CrossingTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -572,13 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/VehicleTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/trafficmon/Log.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -588,8 +592,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/trafficmon/Vehicle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/CrossingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/VehicleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -606,8 +630,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/CongestionChargeSystemTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        <state relative-caret-position="53">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/LogTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

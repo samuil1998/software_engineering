@@ -5,10 +5,8 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-
 public class LogTest {
     Log testLog = new Log();
-
 
   @Test
     public void addsVehicleEntryToLog() {
@@ -61,6 +59,4 @@ public class LogTest {
         testLog.addEntry(vehicle);
         assertThat(testLog.isOrdered(vehicle),is(false));
     }
-
-
 }
