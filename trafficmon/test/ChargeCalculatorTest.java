@@ -9,9 +9,9 @@ import java.math.BigDecimal;
 
 public class ChargeCalculatorTest {
 
-    ChargeCalculator newCharger = new ChargeCalculator();
-    Vehicle vehicle = Vehicle.withRegistration("1234 567");
-    List<Crossing> crossings = new ArrayList<Crossing>();
+    private ChargeCalculator newCharger = new ChargeCalculator();
+    private Vehicle vehicle = Vehicle.withRegistration("1234 567");
+    private List<Crossing> crossings = new ArrayList<Crossing>();
 
     private void entry()
     {

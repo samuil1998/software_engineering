@@ -8,25 +8,21 @@ public class Vehicle {
         this.registration = registration;
     }
 
-    public static Vehicle withRegistration(String registration) {
-        return new Vehicle(registration);
-    }
+    public static Vehicle withRegistration(String registration) { return new Vehicle(registration); }
 
     @Override
-    public String toString() {
-        return "Vehicle [" + registration + "]";
-    }
+    public String toString() { return "Vehicle [" + registration + "]"; }
 
     @Override
     public boolean equals(Object o) {
+
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Vehicle vehicle = (Vehicle) o;
+
         return registration == null ? vehicle.registration == null : registration.equals(vehicle.registration);
     }
 
     @Override
-    public int hashCode() {
-        return registration != null ? registration.hashCode() : 0;
-    }
+    public int hashCode() { return registration != null ? registration.hashCode() : 0; }
 }

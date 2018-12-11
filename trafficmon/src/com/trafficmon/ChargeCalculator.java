@@ -11,13 +11,12 @@ public class ChargeCalculator implements Calculator {
 
     public BigDecimal calculateCharge(List<Crossing> vehicleCrossings) {
 
+        this.crossings = vehicleCrossings;
         BigDecimal charge = new BigDecimal(0);
+
         if (vehicleCrossings.size() < 2) {
             return charge;
         }
-
-        this.crossings = vehicleCrossings;
-        //this.crossings = ignoreOvernight(vehicleCrossings);
 
         if (timeInZone() > FOURHOURS) {
             return new BigDecimal(12);

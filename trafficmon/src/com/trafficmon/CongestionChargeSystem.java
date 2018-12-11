@@ -5,18 +5,16 @@ import java.util.*;
 
 public class CongestionChargeSystem {
 
-    Log log = new TrafficLog();
-
     private PenaltiesService penaltiesService = OperationsTeam.getInstance();
     private AccountsService accountsService = RegisteredCustomerAccountsService.getInstance();
-    private Calculator calculator = new ChargeCalculator();
+    private final Calculator calculator = new ChargeCalculator();
+    private final Log log = new Log();
 
     public CongestionChargeSystem() {}
 
     public CongestionChargeSystem(PenaltiesService penaltiesService, AccountsService accountsService) {
         this.penaltiesService = penaltiesService;
         this.accountsService = accountsService;
-        this.calculator = new ChargeCalculator();
     }
 
     public void vehicleEnteringZone(Vehicle vehicle) {

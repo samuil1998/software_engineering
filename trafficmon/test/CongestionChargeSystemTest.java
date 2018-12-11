@@ -1,16 +1,9 @@
 import com.trafficmon.*;
-import org.hamcrest.CoreMatchers;
-import org.junit.Before;
 import org.junit.Test;
-
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
 
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnitRuleMockery;
 import org.junit.Rule;
-
-import org.joda.time.DateTimeUtils;
 
 import java.math.BigDecimal;
 
@@ -24,8 +17,6 @@ public class CongestionChargeSystemTest {
 
     CongestionChargeSystem system = new CongestionChargeSystem(mockPenaltyService,mockAccountsService);
     Vehicle vehicle = Vehicle.withRegistration("A123 XYZ");
-    ChargeCalculator charger = new ChargeCalculator();
-
 
     @Test
     public void noPenaltyOrInvestigationForRegisteredVehiclesWithCredit() throws Exception
@@ -36,20 +27,17 @@ public class CongestionChargeSystemTest {
         {{
             exactly(1).of(mockAccountsService).accountFor(vehicle);
             will(returnValue(ACCOUNT));
-            exactly(0).of(mockPenaltyService).issuePenaltyNotice(with(vehicle), with(any(BigDecimal.class)));
-            exactly(0).of(mockPenaltyService).triggerInvestigationInto(vehicle);
+            never(mockPenaltyService);
         }});
 
         system.vehicleEnteringZone(vehicle);
-        DateTimeUtils.setCurrentMillisOffset(200000);
-        //Thread.sleep(5);
         system.vehicleLeavingZone(vehicle);
 
         system.calculateCharges();
     }
 
     @Test
-    public void triggersInvestigationIfEnteringTwiceInARow() throws Exception
+    public void triggersInvestigationIfEnteringTwiceInARow()
     {
         context.checking(new Expectations()
         {{
@@ -57,7 +45,6 @@ public class CongestionChargeSystemTest {
         }});
 
         system.vehicleEnteringZone(vehicle);
-        DateTimeUtils.setCurrentMillisOffset(5);
         system.vehicleEnteringZone(vehicle);
 
         system.calculateCharges();
@@ -75,7 +62,6 @@ public class CongestionChargeSystemTest {
         }});
 
         system.vehicleEnteringZone(vehicle);
-        Thread.sleep(5);
         system.vehicleLeavingZone(vehicle);
 
         system.calculateCharges();

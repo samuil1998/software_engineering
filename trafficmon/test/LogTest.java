@@ -1,4 +1,4 @@
-import com.trafficmon.TrafficLog;
+import com.trafficmon.Log;
 import com.trafficmon.Vehicle;
 import org.joda.time.DateTimeZone;
 import org.junit.Test;
@@ -6,8 +6,8 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 
-public class TrafficLogTest {
-    TrafficLog testLog = new TrafficLog();
+public class LogTest {
+    Log testLog = new Log();
 
 
   @Test
