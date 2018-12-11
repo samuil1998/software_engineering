@@ -12,11 +12,11 @@ public class CongestionChargeSystemTest {
     @Rule
     public JUnitRuleMockery context = new JUnitRuleMockery();
 
-    PenaltiesService mockPenaltyService = context.mock(PenaltiesService.class);
-    AccountsService mockAccountsService = context.mock(AccountsService.class);
+    private PenaltiesService mockPenaltyService = context.mock(PenaltiesService.class);
+    private AccountsService mockAccountsService = context.mock(AccountsService.class);
 
-    CongestionChargeSystem system = new CongestionChargeSystem(mockPenaltyService,mockAccountsService);
-    Vehicle vehicle = Vehicle.withRegistration("A123 XYZ");
+    private CongestionChargeSystem system = new CongestionChargeSystem(mockPenaltyService,mockAccountsService);
+    private Vehicle vehicle = Vehicle.withRegistration("A123 XYZ");
 
     @Test
     public void noPenaltyOrInvestigationForRegisteredVehiclesWithCredit() throws Exception
