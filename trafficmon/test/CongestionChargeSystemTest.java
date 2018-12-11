@@ -1,10 +1,8 @@
 import com.trafficmon.*;
 import org.junit.Test;
-
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnitRuleMockery;
 import org.junit.Rule;
-
 import java.math.BigDecimal;
 
 public class CongestionChargeSystemTest {

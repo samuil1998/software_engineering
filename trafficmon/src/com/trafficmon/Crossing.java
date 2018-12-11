@@ -1,5 +1,4 @@
 package com.trafficmon;
-
 import org.joda.time.DateTimeUtils;
 
 public class Crossing {

@@ -1,8 +1,8 @@
 package com.trafficmon;
 
 import java.math.BigDecimal;
-import java.util.*;
-import org.joda.time.*;
+import java.util.List;
+import org.joda.time.LocalTime;
 
 public class ChargeCalculator implements Calculator {
 
